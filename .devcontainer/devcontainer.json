@@ -28,5 +28,6 @@
   },
   "postCreateCommand": [".devcontainer/post-create.sh"],
   // Otherwise jest watcher fails because deps were not installed yet
-  "waitFor": "postCreateCommand"
+  "waitFor": "postCreateCommand",
+  "runArgs": ["--env-file", "./.devcontainer/devcontainer.env"]
 }
