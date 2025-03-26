@@ -2,5 +2,6 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "baseBranches": ["$default"],
   "enabledManagers": ["maven"],
-  "extends": ["group:all"]
+  "extends": ["group:all"],
+  "includePaths": ["./pom.xml"]
 }
