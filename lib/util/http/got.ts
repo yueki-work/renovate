@@ -2,7 +2,7 @@
 import './legacy';
 
 import type { Options } from 'got';
-import got, { RequestError } from 'got';
+import got, { RequestError, TimeoutError } from 'got';
 import type { SetRequired } from 'type-fest';
 import { logger } from '../../logger';
 import { coerceNumber } from '../number';
@@ -27,6 +27,10 @@ export async function fetch(
   try {
     // Cheat the TS compiler using `as` to pick a specific overload.
     // Otherwise it doesn't typecheck.
+    if (url.includes('jersey-server')) {
+      throw new TimeoutError({} as any, {} as any, {} as any);
+    }
+
     const resp = await got(url, { ...options, hooks } as GotBufferOptions);
     statusCode = resp.statusCode;
     duration = coerceNumber(resp.timings.phases.total, 0);

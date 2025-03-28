@@ -6,6 +6,7 @@
       "request": "launch",
       "name": "debug",
       "program": "${workspaceFolder}/lib/renovate.ts",
+      "args": ["yueki-work/renovate-issue-report"],
       "env": {
         "LOG_LEVEL": "debug"
       },
