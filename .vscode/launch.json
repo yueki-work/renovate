@@ -6,7 +6,7 @@
       "request": "launch",
       "name": "debug",
       "program": "${workspaceFolder}/lib/renovate.ts",
-      "args": ["yueki-work/renovate-issue-report"],
+      "args": ["yueki-work/renovate-issue-hostRules-disable"],
       "env": {
         "LOG_LEVEL": "debug"
       },
